@@ -16,3 +16,19 @@ conda env create -f environment.yml -n sscod
 pip install "git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI"
 pip install -v -e .
 ```
+
+
+## Results
+
+Scripts for training and testing models are put in folder `scripts`:
+```
+scripts
+├── coco
+│   ├── test
+│   │   └── exp2_caseB_curcon.sh
+│   └── train
+│       └── exp2_caseB_curcon.sh
+└── voc
+    ├── test
+    └── train
+```
