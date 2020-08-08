@@ -1,6 +1,6 @@
 # Single Stage Common Object Detection
 
-Official Pytorch implementation of the paper **Single Stage Class Agnostic Common Object Detection**.
+Official Pytorch implementation for the paper **Single Stage Class Agnostic Common Object Detection**.
 
 [Chuong Nguyen](https://github.com/chuong98), [Thuy Nguyen](https://github.com/thuyngch), [Anh Vo](https://github.com/anhvth), and Masayuki Yamazaki.
 
