@@ -4,8 +4,8 @@ set -e
 PROPOSAL=100
 IOU=0.5
 PAIRS=6
-CONFIG="configs/sscod/voc/exp2_arccon.py"
-WORK_DIR="/checkpoints/sscod/voc/exp2_arccon"
+CONFIG="configs/sscod/voc/exp2_focalcur.py"
+WORK_DIR="/checkpoints/sscod/voc/exp2_focalcur"
 
 GPUS=6
 CKPT="${WORK_DIR}/epoch_12.pth"

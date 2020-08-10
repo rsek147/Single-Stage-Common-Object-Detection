@@ -39,11 +39,10 @@ model = dict(
         embed_channels=256,
         exp_type=2,
         unseen_classID=unseen_classes,
-        classwise_loss=None,
-        pairwise_loss=dict(
-            type='SupContrastLoss', in_channels=256, embed_channels=None,
-            scale=1.0, margin=0.5, easy_margin=False,
-            ignore_class0=True, loss_weight=1.0),
+        classwise_loss=dict(
+            type='FocalCurricularLoss', ignore_class0=True, scale=4,
+            margin=0.5, easy_margin=False, loss_weight=1.0),
+        pairwise_loss=None,
         embed_norm_cfg=None,
         num_classes=21,
         in_channels=256,
