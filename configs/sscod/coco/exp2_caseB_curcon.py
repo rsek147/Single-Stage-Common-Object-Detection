@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 
@@ -6,9 +7,11 @@ data_root = '/data/coco/'
 df = pd.read_csv('configs/sscod/coco/coco_classes_caseB.csv')
 seen_classes = np.where(df['take'].values != 0)[0] + 1
 unseen_classes = np.where(df['take'].values == 0)[0] + 1
-# used_classes_for_eval = None
-# used_classes_for_eval = seen_classes
-used_classes_for_eval = unseen_classes
+
+if os.environ.get('EONC', '1') == '1':
+    used_classes_for_eval = seen_classes
+else:
+    used_classes_for_eval = unseen_classes
 
 # model settings
 model = dict(
