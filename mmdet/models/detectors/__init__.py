@@ -16,10 +16,11 @@ from .rpn import RPN
 from .single_stage import SingleStageDetector
 from .two_stage import TwoStageDetector
 from .sscod import SSCOD
+from .sscod_baseline import SSCOD_Baseline
 
 __all__ = [
     'ATSS', 'BaseDetector', 'SingleStageDetector', 'TwoStageDetector', 'RPN',
     'FastRCNN', 'FasterRCNN', 'MaskRCNN', 'CascadeRCNN', 'HybridTaskCascade',
     'DoubleHeadRCNN', 'RetinaNet', 'FCOS', 'GridRCNN', 'MaskScoringRCNN',
-    'RepPointsDetector', 'FOVEA', 'SSCOD',
+    'RepPointsDetector', 'FOVEA', 'SSCOD', 'SSCOD_Baseline',
 ]

@@ -12,10 +12,11 @@ from .retina_sepbn_head import RetinaSepBNHead
 from .rpn_head import RPNHead
 from .ssd_head import SSDHead
 from .atss_cod_head import ATSS_COD_Head
+from .atss_cod_baseline_head import ATSS_COD_Basline_Head
 
 __all__ = [
     'AnchorHead', 'GuidedAnchorHead', 'FeatureAdaption', 'RPNHead',
     'GARPNHead', 'RetinaHead', 'RetinaSepBNHead', 'GARetinaHead', 'SSDHead',
     'FCOSHead', 'RepPointsHead', 'FoveaHead', 'FreeAnchorRetinaHead',
-    'ATSSHead', 'ATSS_COD_Head',
+    'ATSSHead', 'ATSS_COD_Head', 'ATSS_COD_Basline_Head',
 ]
