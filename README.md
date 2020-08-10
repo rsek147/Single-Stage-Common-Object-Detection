@@ -31,7 +31,13 @@ scripts
 │   └── train
 │       └── exp2_caseB_curcon.sh
 └── voc
-    └── test
+    ├── test
+    │   ├── exp2_arcconneg.sh
+    │   ├── exp2_arccon.sh
+    │   ├── exp2_baseline.sh
+    │   ├── exp2_curcon.sh
+    │   └── exp2_focalcur.sh
+    └── train
         ├── exp2_arcconneg.sh
         ├── exp2_arccon.sh
         ├── exp2_baseline.sh
