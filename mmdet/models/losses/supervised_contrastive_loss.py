@@ -83,7 +83,7 @@ class SupContrastLoss(nn.Module):
             targets_pos.expand(n_pos, n_pos).t())
         mask_neg = ~mask_pos
         # The diagonal element (compare with itself) is excluded
-        eye = torch.eye(n_pos).byte().to(mask_pos)
+        eye = torch.eye(n_pos).bool().to(mask_pos)
         mask_pos[eye] = 0
 
         # Compute similarity
@@ -178,7 +178,7 @@ class SupContrastNegLoss(SupContrastLoss):
             targets_pos.expand(n_pos, n_pos).t())
         mask_neg = ~mask_pos
         # The diagonal element (compare with itself) is excluded
-        eye = torch.eye(n_pos).byte().to(mask_pos)
+        eye = torch.eye(n_pos).bool().to(mask_pos)
         mask_pos[eye] = 0
 
         # Compute similarity

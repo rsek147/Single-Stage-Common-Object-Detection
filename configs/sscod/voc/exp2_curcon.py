@@ -141,7 +141,7 @@ optimizer = dict(type='SGD', lr=5e-3, momentum=0.9, weight_decay=4e-5)
 optimizer_config = dict(grad_clip=dict(max_norm=35, norm_type=2))
 # learning policy
 lr_config = dict(
-    policy='CosineAnealing', min_lr=5e-5, by_epoch=False,
+    policy='Cosine', min_lr=5e-5, by_epoch=False,
     warmup='linear', warmup_iters=500, warmup_ratio=1.0 / 3)
 checkpoint_config = dict(interval=1)
 # yapf:disable

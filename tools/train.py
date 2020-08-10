@@ -20,7 +20,10 @@ from mmdet.utils import collect_env, get_root_logger
 def parse_args():
     parser = argparse.ArgumentParser(description='Train a detector')
     parser.add_argument('config', help='train config file path')
+    parser.add_argument('--data_root', help='data root')
     parser.add_argument('--work_dir', help='the dir to save logs and models')
+    parser.add_argument(
+        '--load_from', help='the checkpoint file to load from')
     parser.add_argument(
         '--resume_from', help='the checkpoint file to resume from')
     parser.add_argument(
@@ -67,11 +70,43 @@ def main():
         cfg.work_dir = args.work_dir
     if args.resume_from is not None:
         cfg.resume_from = args.resume_from
+
+    def replace_dataroot(obj, name_list=['ann_file', 'img_prefix', 'class_imgID_file']):
+        for name in name_list:
+            path = getattr(obj, name, None)
+            if path is not None:
+                if isinstance(path, list):
+                    path = [p.replace(cfg.data_root, args.data_root)
+                            for p in path]
+                else:
+                    path = path.replace(cfg.data_root, args.data_root)
+                setattr(obj, name, path)
+        return obj
+
+    # update workdir and data_root:
+    if args.work_dir:
+        cfg.work_dir = args.work_dir
+    if args.data_root:
+        if cfg.data.train.type == 'RepeatDataset':
+            cfg.data.train.dataset = replace_dataroot(cfg.data.train.dataset)
+        else:
+            cfg.data.train = replace_dataroot(cfg.data.train)
+
+        cfg.data.val = replace_dataroot(cfg.data.val)
+        cfg.data.test = replace_dataroot(cfg.data.test)
+        cfg.data_root = args.data_root
+    if args.load_from:
+        cfg.load_from = args.load_from
     cfg.gpus = args.gpus
 
-    if args.autoscale_lr:
-        # apply the linear scaling rule (https://arxiv.org/abs/1706.02677)
-        cfg.optimizer['lr'] = cfg.optimizer['lr'] * cfg.gpus / 8
+    # Copy config file to work_dir
+    os.makedirs(cfg.work_dir, exist_ok=True)
+    os.system("cp %s %s" % (args.config, cfg.work_dir))
+
+    # if args.autoscale_lr:
+    #     import pdb; pdb.set_trace()
+    #     # apply the linear scaling rule (https://arxiv.org/abs/1706.02677)
+    #     cfg.optimizer['lr'] = cfg.optimizer['lr'] * cfg.gpus / 8
 
     # init distributed env first, since logger depends on the dist info.
     if args.launcher == 'none':
