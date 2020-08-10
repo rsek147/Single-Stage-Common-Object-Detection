@@ -41,7 +41,7 @@ model = dict(
         unseen_classID=unseen_classes,
         classwise_loss=None,
         pairwise_loss=dict(
-            type='SupContrastNegLoss', in_channels=256, embed_channels=None,
+            type='SupContrastLoss', in_channels=256, embed_channels=None,
             scale=1.0, margin=0.5, easy_margin=False,
             ignore_class0=True, loss_weight=1.0),
         embed_norm_cfg=None,
