@@ -13,6 +13,8 @@ This work is based on [MMDetection](https://github.com/open-mmlab/mmdetection) 1
 
 ```bash
 conda env create -f environment.yml -n sscod
+conda activate sscod
+
 pip install "git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI"
 pip install -v -e .
 ```

@@ -2,11 +2,11 @@ from .coco import *
 
 
 @DATASETS.register_module
-class CocoCODDataset(CocoDataset):
+class Coco_COD_Dataset(CocoDataset):
 
     def __init__(self, used_class_ids=None, **kargs):
         self.used_class_ids = used_class_ids
-        super(CocoCODDataset, self).__init__(**kargs)
+        super(Coco_COD_Dataset, self).__init__(**kargs)
 
     def _parse_ann_info(self, img_info, ann_info):
         """Parse bbox and mask annotation.
