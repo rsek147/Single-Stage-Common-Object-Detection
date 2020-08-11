@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-CONFIG="configs/sscod/coco/exp2_caseB_curcon.py"
-WORK_DIR="/checkpoints/sscod/coco/exp2_caseB_curcon"
+CONFIG="configs/sscod/coco/exp2_caseB_baseline.py"
+WORK_DIR="/checkpoints/sscod/coco/exp2_caseB_baseline"
 
-GPUS=8
+GPUS=2
 SEED=0
 
 python -m torch.distributed.launch \
