@@ -2,9 +2,9 @@
 set -e
 
 CONFIG="configs/sscod/voc/exp2_arccon.py"
-WORK_DIR="/checkpoints/sscod/voc/exp2_arccon"
+WORK_DIR="./checkpoints/sscod/voc/exp2_arccon"
 
-GPUS=2
+GPUS=1
 SEED=0
 
 python -m torch.distributed.launch \

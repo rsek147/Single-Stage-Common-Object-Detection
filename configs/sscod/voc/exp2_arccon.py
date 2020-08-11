@@ -10,6 +10,7 @@ if os.environ.get('EONC', '1') == '1':
 else:
     used_classes_for_eval = unseen_classes
 
+num_samples=10
 # model settings
 model = dict(
     type='SSCOD',
@@ -110,12 +111,13 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    imgs_per_gpu=8,
+    imgs_per_gpu=2,
     workers_per_gpu=4,
     train=dict(
         type='RepeatDataset',
         times=3,
         dataset=dict(
+            num_samples=num_samples,
             type=dataset_type,
             ann_file=[
                 data_root + 'VOC2007/ImageSets/Main/trainval.txt',
@@ -125,11 +127,13 @@ data = dict(
                 data_root + 'VOC2012/'],
             pipeline=train_pipeline)),
     val=dict(
+        num_samples=num_samples,
         type=dataset_type,
         ann_file=data_root + 'VOC2007TEST/ImageSets/Main/test.txt',
         img_prefix=data_root + 'VOC2007TEST/',
         pipeline=test_pipeline),
     test=dict(
+        num_samples=num_samples,
         type=dataset_type,
         ann_file=data_root + 'VOC2007TEST/ImageSets/Main/test.txt',
         img_prefix=data_root + 'VOC2007TEST/',

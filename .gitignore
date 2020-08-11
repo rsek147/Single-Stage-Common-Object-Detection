@@ -117,3 +117,5 @@ work_dirs/
 
 # Pytorch
 *.pth
+checkpoints
+codet-debug-imgs

@@ -115,6 +115,7 @@ class BaseDetector(nn.Module, metaclass=ABCMeta):
                 'num of augmentations ({}) != num of image meta ({})'.format(
                     len(imgs), len(img_metas)))
         # TODO: remove the restriction of imgs_per_gpu == 1 when prepared
+        imgs = [_[0] for _ in imgs]
         imgs_per_gpu = imgs[0].size(0)
         assert imgs_per_gpu == 1
 

@@ -74,20 +74,21 @@ class SSCOD(SingleStageDetector):
                     'classes': det_result[1].cpu().numpy(),
                     'embed': det_result[2].cpu().numpy()}
         else:
-            bbox_results = [
-                bbox2result(det_bboxes, det_labels, self.bbox_head.num_classes)
-                for det_bboxes, det_labels, det_embeds in bbox_list
-            ]
-            return bbox_results[0]
+            boxes1, labels1, embed_feat1 =  det_result[0],det_result[1],det_result[2]
+            return boxes1, labels1, embed_feat1
+            # bbox_results = [
+            #     bbox2result(det_bboxes, det_labels, self.bbox_head.num_classes)
+            #     for det_bboxes, det_labels, det_embeds in bbox_list
+            # ]
+            # return bbox_results[0]
 
     def aug_test(self, imgs, img_metas, rescale=False):
         # Pass a band of images (can be >2) to simple_test
         N_imgs = len(imgs)
-        infer_single = [
-            self.simple_test(
-                imgs[i][0], img_metas[i][0], rescale, return_dict=False)
-            for i in range(N_imgs)]
-
+        infer_single = []
+        for i in range(N_imgs):
+            _ = self.simple_test(imgs[i], img_metas[i][0], rescale=rescale, return_dict=False)
+            infer_single.append(_)
         # Compute the matching score across image-pairs
         outputs = []
         for i in range(N_imgs-1):
