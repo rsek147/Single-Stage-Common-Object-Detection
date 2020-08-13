@@ -15,7 +15,7 @@ pip install -v -e .
 ```
 
 
-## Results
+## Training and Testing
 
 Scripts for training and testing models are put in folder `scripts`:
 ```
@@ -39,3 +39,14 @@ scripts
         ├── exp2_curcon.sh
         └── exp2_focalcur.sh
 ```
+
+
+## Qualitative results
+
+![image](imgs/000005_000047.jpg)
+![image](imgs/000007_000083.jpg)
+![image](imgs/000009_000050.jpg)
+![image](imgs/000016_000023.jpg)
+![image](imgs/000019_000077.jpg)
+![image](imgs/000024_000042.jpg)
+![image](imgs/000046_000064.jpg)
