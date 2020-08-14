@@ -5,6 +5,7 @@ import numpy as np
 data_root = '/data/coco/'
 
 df = pd.read_csv('configs/sscod/coco/coco_classes_caseB.csv')
+total_classes = list(range(1, 81))
 seen_classes = np.where(df['take'].values != 0)[0] + 1
 unseen_classes = np.where(df['take'].values == 0)[0] + 1
 
