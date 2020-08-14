@@ -110,7 +110,6 @@ data = dict(
         ann_file=data_root + 'annotations/instances_train2017.json',
         img_prefix=data_root + 'images/train2017/',
         pipeline=train_pipeline,
-        pipeline_aug=train_pipeline,
         used_class_ids=seen_classes),
     val=dict(
         type='Coco_COD_Dataset',
@@ -145,6 +144,6 @@ total_epochs = 12
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 load_from = None
-resume_from = None
+resume_from = "/checkpoints/sscod/coco/exp2_caseB_baseline/latest.pth"
 workflow = [('train', 1)]
 find_unused_parameters = True
