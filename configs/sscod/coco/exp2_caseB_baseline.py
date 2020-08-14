@@ -15,7 +15,7 @@ else:
 
 # model settings
 model = dict(
-    type='ATSS',
+    type='SSCOD_Baseline',
     pretrained='torchvision://resnet50',
     backbone=dict(
         type='ResNet',
@@ -37,7 +37,7 @@ model = dict(
         extra_convs_on_inputs=False,
         num_outs=5),
     bbox_head=dict(
-        type='ATSSHead',
+        type='ATSS_COD_Basline_Head',
         num_classes=81,
         in_channels=256,
         stacked_convs=4,
