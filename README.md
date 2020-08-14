@@ -41,6 +41,31 @@ scripts
 ```
 
 
+## Quantitative results
+
+#### VOC dataset
+
+<p align="center">
+    <img src="imgs/tables/table2.png" width="600">
+</p>
+
+<p align="center">
+    <img src="imgs/tables/table3.png" width="600">
+</p>
+
+<p align="center">
+    <img src="imgs/tables/table4.png" width="600">
+</p>
+
+
+#### COCO dataset
+
+<p align="center">
+    <img src="imgs/tables/table5.png" width="600">
+</p>
+
+
+
 ## Qualitative results
 
 ![image](imgs/000005_000047.jpg)
