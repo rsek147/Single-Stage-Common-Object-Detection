@@ -22,8 +22,12 @@ Scripts for training and testing models are put in folder `scripts`:
 scripts
 ├── coco
 │   ├── test
+│   │   ├── exp2_caseA_baseline.sh
+│   │   ├── exp2_caseB_baseline.sh
 │   │   └── exp2_caseB_curcon.sh
 │   └── train
+│       ├── exp2_caseA_baseline.sh
+│       ├── exp2_caseB_baseline.sh
 │       └── exp2_caseB_curcon.sh
 └── voc
     ├── test

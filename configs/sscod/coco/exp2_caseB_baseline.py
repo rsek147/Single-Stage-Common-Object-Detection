@@ -5,6 +5,7 @@ import numpy as np
 data_root = '/data/coco/'
 
 df = pd.read_csv('configs/sscod/coco/coco_classes_caseB.csv')
+total_classes = list(range(1, 81))
 seen_classes = np.where(df['take'].values != 0)[0] + 1
 unseen_classes = np.where(df['take'].values == 0)[0] + 1
 
@@ -15,7 +16,7 @@ else:
 
 # model settings
 model = dict(
-    type='ATSS',
+    type='SSCOD_Baseline',
     pretrained='torchvision://resnet50',
     backbone=dict(
         type='ResNet',
@@ -37,7 +38,7 @@ model = dict(
         extra_convs_on_inputs=False,
         num_outs=5),
     bbox_head=dict(
-        type='ATSSHead',
+        type='ATSS_COD_Basline_Head',
         num_classes=81,
         in_channels=256,
         stacked_convs=4,
@@ -110,7 +111,6 @@ data = dict(
         ann_file=data_root + 'annotations/instances_train2017.json',
         img_prefix=data_root + 'images/train2017/',
         pipeline=train_pipeline,
-        pipeline_aug=train_pipeline,
         used_class_ids=seen_classes),
     val=dict(
         type='Coco_COD_Dataset',
@@ -145,6 +145,6 @@ total_epochs = 12
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 load_from = None
-resume_from = None
+resume_from = "/checkpoints/sscod/coco/exp2_caseB_baseline/latest.pth"
 workflow = [('train', 1)]
 find_unused_parameters = True
