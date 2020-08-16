@@ -65,9 +65,11 @@ scripts
 #### COCO dataset
 
 <p align="center">
-    <img src="imgs/tables/table5.png" width="600">
+    <img src="imgs/tables/Table5.png" width="600">
 </p>
-
+<p align="center">
+    <img src="imgs/tables/Table6.png" width="600">
+</p>
 
 
 ## Qualitative results
