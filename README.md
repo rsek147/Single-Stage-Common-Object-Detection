@@ -54,30 +54,30 @@ scripts
 </p>
 
 <p align="center">
-    <img src="imgs/tables/table3.png" width="600">
+    <img src="https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/tables/table3.png" width="600">
 </p>
 
 <p align="center">
-    <img src="imgs/tables/table4.png" width="600">
+    <img src="https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/tables/table4.png" width="600">
 </p>
 
 
 #### COCO dataset
 
 <p align="center">
-    <img src="imgs/tables/Table5.png" width="600">
+    <img src="https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/tables/Table5.png" width="600">
 </p>
 <p align="center">
-    <img src="imgs/tables/Table6.png" width="600">
+    <img src="https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/tables/Table6.png" width="600">
 </p>
 
 
 ## Qualitative results
 
-![image](imgs/000005_000047.jpg)
-![image](imgs/000007_000083.jpg)
-![image](imgs/000009_000050.jpg)
-![image](imgs/000016_000023.jpg)
-![image](imgs/000019_000077.jpg)
-![image](imgs/000024_000042.jpg)
-![image](imgs/000046_000064.jpg)
+![image](https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/000005_000047.jpg)
+![image](https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/000007_000083.jpg)
+![image](https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/000009_000050.jpg)
+![image](https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/000016_000023.jpg)
+![image](https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/000019_000077.jpg)
+![image](https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/000024_000042.jpg)
+![image](https://raw.githubusercontent.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/master/imgs/000046_000064.jpg)
