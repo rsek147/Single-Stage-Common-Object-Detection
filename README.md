@@ -50,7 +50,7 @@ scripts
 #### VOC dataset
 
 <p align="center">
-    <img src="imgs/tables/table2.png" width="600">
+    <img src="https://github.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/blob/master/imgs/tables/table2.png" width="600">
 </p>
 
 <p align="center">
