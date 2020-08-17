@@ -50,7 +50,7 @@ scripts
 #### VOC dataset
 
 <p align="center">
-    <img src="https://github.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/blob/master/imgs/tables/table2.png" width="600">
+    <img src="imgs/tables/table2.png" width="600">
 </p>
 
 <p align="center">
@@ -74,7 +74,7 @@ scripts
 
 ## Qualitative results
 
-![image](imgs/000005_000047.jpg)
+![image](https://github.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/blob/master/imgs/000005_000047.jpg)
 ![image](imgs/000007_000083.jpg)
 ![image](imgs/000009_000050.jpg)
 ![image](imgs/000016_000023.jpg)
