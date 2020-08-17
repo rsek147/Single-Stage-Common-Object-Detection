@@ -44,6 +44,8 @@ scripts
         └── exp2_focalcur.sh
 ```
 
+Checkpoints can be downloaded from https://www.dropbox.com/sh/j151jxfz44dzl2i/AACSTybiL5u9nC20x0aSzwR3a?dl=0.
+
 
 ## Quantitative results
 
