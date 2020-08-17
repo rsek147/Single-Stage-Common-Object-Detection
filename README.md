@@ -74,7 +74,7 @@ scripts
 
 ## Qualitative results
 
-![image](https://github.com/cybercore-co-ltd/Single-Stage-Common-Object-Detection/blob/master/imgs/000005_000047.jpg)
+![image](imgs/000005_000047.jpg)
 ![image](imgs/000007_000083.jpg)
 ![image](imgs/000009_000050.jpg)
 ![image](imgs/000016_000023.jpg)
