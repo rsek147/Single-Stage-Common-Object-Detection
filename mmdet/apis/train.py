@@ -72,12 +72,21 @@ def batch_processor(model, data, train_mode):
     Returns:
         dict: A dict containing losses and log vars.
     """
+    # losses = model(**data)
+    # loss, log_vars = parse_losses(losses)
+
+    # outputs = dict(
+    #     loss=loss, log_vars=log_vars, num_samples=len(data['img'].data))
+
+    # return outputs
+
     losses = model(**data)
     loss, log_vars = parse_losses(losses)
 
+    l = len(data['img'])*len(data['img']
+                             [0].data) if isinstance(data['img'], list) else len(data['img'].data)
     outputs = dict(
-        loss=loss, log_vars=log_vars, num_samples=len(data['img'].data))
-
+        loss=loss, log_vars=log_vars, num_samples=l)
     return outputs
 
 

@@ -145,6 +145,6 @@ total_epochs = 12
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 load_from = None
-resume_from = "/checkpoints/sscod/coco/exp2_caseB_baseline/latest.pth"
+resume_from = None
 workflow = [('train', 1)]
 find_unused_parameters = True

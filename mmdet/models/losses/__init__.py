@@ -11,6 +11,8 @@ from .smooth_l1_loss import SmoothL1Loss, smooth_l1_loss
 from .utils import reduce_loss, weight_reduce_loss, weighted_loss
 from .supervised_contrastive_loss import (SupContrastLoss, SupContrastNegLoss,
                                           CurContrastLoss, CurContrastNegLoss)
+from .angular_margin_loss import (ArcFaceLoss, ArcFaceFocalLoss,
+                                  CurricularLoss, FocalCurricularLoss)
 
 __all__ = [
     'accuracy', 'Accuracy', 'cross_entropy', 'binary_cross_entropy',
@@ -20,4 +22,5 @@ __all__ = [
     'IoULoss', 'BoundedIoULoss', 'GIoULoss', 'GHMC', 'GHMR', 'reduce_loss',
     'weight_reduce_loss', 'weighted_loss', 'SupContrastLoss',
     'SupContrastNegLoss', 'CurContrastLoss', 'CurContrastNegLoss',
+    'ArcFaceLoss', 'ArcFaceFocalLoss', 'CurricularLoss', 'FocalCurricularLoss',
 ]
