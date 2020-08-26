@@ -8,8 +8,8 @@ CONFIG="configs/sscod/voc/exp2_arccon.py"
 WORK_DIR="/checkpoints/sscod/voc/exp2_arccon"
 
 GPUS=6
-CKPT="${WORK_DIR}/epoch_12.pth"
-PKL="${WORK_DIR}/epoch_12.pkl"
+CKPT="${WORK_DIR}/c8d80951a6df089d_e_12.pth"
+PKL="${WORK_DIR}/c8d80951a6df089d_e_12.pkl"
 
 python -m torch.distributed.launch \
     --nproc_per_node=$GPUS --master_port=$((RANDOM + 10000)) \
