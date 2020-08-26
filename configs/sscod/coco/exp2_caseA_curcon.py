@@ -4,8 +4,7 @@ import numpy as np
 
 data_root = '/data/coco/'
 
-df = pd.read_csv('configs/sscod/coco/coco_classes_caseB.csv')
-total_classes = list(range(1, 81))
+df = pd.read_csv('configs/sscod/coco/coco_classes_caseA.csv')
 seen_classes = np.where(df['take'].values != 0)[0] + 1
 unseen_classes = np.where(df['take'].values == 0)[0] + 1
 
@@ -16,7 +15,7 @@ else:
 
 # model settings
 model = dict(
-    type='SSCOD_Baseline',
+    type='SSCOD',
     pretrained='torchvision://resnet50',
     backbone=dict(
         type='ResNet',
@@ -38,7 +37,17 @@ model = dict(
         extra_convs_on_inputs=False,
         num_outs=5),
     bbox_head=dict(
-        type='ATSS_COD_Basline_Head',
+        type='ATSS_COD_Head',
+        stacked_obj_convs=4,
+        embed_channels=256,
+        exp_type=2,
+        unseen_classID=unseen_classes,
+        classwise_loss=None,
+        pairwise_loss=dict(
+            type='CurContrastLoss', in_channels=256,
+            embed_channels=None, scale=1.0, margin=0.5,
+            easy_margin=False, ignore_class0=True, loss_weight=1.0),
+        embed_norm_cfg=None,
         num_classes=81,
         in_channels=256,
         stacked_convs=4,
@@ -104,14 +113,15 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    imgs_per_gpu=8,
-    workers_per_gpu=8,
+    imgs_per_gpu=4,
+    workers_per_gpu=4,
     train=dict(
-        type='Coco_COD_Dataset',
+        type='CocoContrastiveDataset',
         ann_file=data_root + 'annotations/instances_train2017.json',
         img_prefix=data_root + 'images/train2017/',
         pipeline=train_pipeline,
-        used_class_ids=seen_classes),
+        pipeline_aug=train_pipeline,
+        pair_itself=False),
     val=dict(
         type='Coco_COD_Dataset',
         ann_file=data_root + 'annotations/instances_val2017.json',
@@ -125,11 +135,11 @@ data = dict(
         used_class_ids=used_classes_for_eval,
         test_mode=True))
 # optimizer
-optimizer = dict(type='SGD', lr=1e-2, momentum=0.9, weight_decay=4e-5)
+optimizer = dict(type='SGD', lr=4e-2, momentum=0.9, weight_decay=4e-5)
 optimizer_config = dict(grad_clip=dict(max_norm=35, norm_type=2))
 # learning policy
 lr_config = dict(
-    policy='Cosine', min_lr=1e-4, by_epoch=False,
+    policy='Cosine', min_lr=4e-4, by_epoch=False,
     warmup='linear', warmup_iters=500, warmup_ratio=1.0 / 3)
 checkpoint_config = dict(interval=1)
 # yapf:disable
