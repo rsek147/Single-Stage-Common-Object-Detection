@@ -1,4 +1,4 @@
-# Single Stage Common Object Detection
+# Single Stage Common Object Detection: A Simple Baseline
 
 Official Pytorch implementation for the paper **"Single Stage Class Agnostic Common Object Detection"**.
 This work is based on [MMDetection](https://github.com/open-mmlab/mmdetection) 1.1.0.
