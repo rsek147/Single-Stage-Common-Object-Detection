@@ -1,6 +1,6 @@
 import os
 
-data_root = '/data/VOCdevkit/'
+data_root = './dataset/VOCdevkit/'
 
 seen_classes = list(range(1, 16))
 unseen_classes = list(range(16, 21))
@@ -110,7 +110,8 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    imgs_per_gpu=8,
+    # imgs_per_gpu=8,
+    imgs_per_gpu=1,
     workers_per_gpu=4,
     train=dict(
         type='RepeatDataset',
@@ -126,13 +127,13 @@ data = dict(
             pipeline=train_pipeline)),
     val=dict(
         type=dataset_type,
-        ann_file=data_root + 'VOC2007TEST/ImageSets/Main/test.txt',
-        img_prefix=data_root + 'VOC2007TEST/',
+        ann_file=data_root + 'VOC2007/ImageSets/Main/test.txt',
+        img_prefix=data_root + 'VOC2007/',
         pipeline=test_pipeline),
     test=dict(
         type=dataset_type,
-        ann_file=data_root + 'VOC2007TEST/ImageSets/Main/test.txt',
-        img_prefix=data_root + 'VOC2007TEST/',
+        ann_file=data_root + 'VOC2007/ImageSets/Main/test.txt',
+        img_prefix=data_root + 'VOC2007/',
         pipeline=test_pipeline,
         used_class_ids=used_classes_for_eval,
         test_mode=True))

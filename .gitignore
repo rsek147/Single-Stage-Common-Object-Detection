@@ -114,6 +114,8 @@ data
 *.log.json
 work_dirs/
 .editorconfig
+checkpoints/
+dataset/VOCdevkit
 
 # Pytorch
 *.pth
